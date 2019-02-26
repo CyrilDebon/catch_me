@@ -1,11 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'lines#index'
+  root to: 'pages#home'
   resources :lines, only: [:index, :show]
-  resources :stops, only: [:show]
-
-  resources :stops, only: [:show] do
-    resources :favorites, only: [:index, :create, :destroy]
+  resources :stops, only: [:show], shallow: true do
+    resources :favorites, only: [:create, :destroy]
   end
-
 end
