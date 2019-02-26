@@ -1,4 +1,4 @@
 class Stop < ApplicationRecord
   belongs_to :direction
-  belongs_to :favorite
+  has_many :favorites
 end

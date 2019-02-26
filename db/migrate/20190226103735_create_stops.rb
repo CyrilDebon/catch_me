@@ -3,8 +3,8 @@ class CreateStops < ActiveRecord::Migration[5.2]
     create_table :stops do |t|
       t.string :name
       t.string :tbm_id
-      t.string :latitude
-      t.string :longitude
+      t.float :latitude
+      t.float :longitude
 
       t.timestamps
     end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_26_105324) do
+ActiveRecord::Schema.define(version: 2019_02_26_134055) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,11 +18,9 @@ ActiveRecord::Schema.define(version: 2019_02_26_105324) do
   create_table "directions", force: :cascade do |t|
     t.string "name"
     t.bigint "line_id"
-    t.bigint "stop_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["line_id"], name: "index_directions_on_line_id"
-    t.index ["stop_id"], name: "index_directions_on_stop_id"
   end
 
   create_table "favorites", force: :cascade do |t|
@@ -49,10 +47,12 @@ ActiveRecord::Schema.define(version: 2019_02_26_105324) do
   create_table "stops", force: :cascade do |t|
     t.string "name"
     t.string "tbm_id"
-    t.string "latitude"
-    t.string "longitude"
+    t.float "latitude"
+    t.float "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "direction_id"
+    t.index ["direction_id"], name: "index_stops_on_direction_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(version: 2019_02_26_105324) do
   end
 
   add_foreign_key "directions", "lines"
-  add_foreign_key "directions", "stops"
   add_foreign_key "favorites", "stops"
   add_foreign_key "favorites", "users"
+  add_foreign_key "stops", "directions"
 end
