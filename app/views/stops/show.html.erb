@@ -1,0 +1,11 @@
+<h1><%= @stop.name %></h1>
+<p><%= @stop.tbm_id %></p>
+<p>Direction : <%= @stop.direction.name %></p>
+<p>Transport : <%= @stop.direction.line.name %></p>
+<p>Code Transport : <%= @stop.direction.line.code %></p>
+<% @stop_tbm.each do |stop| %>
+  <%= stop[1] %>
+<% end %>
+
+
+
