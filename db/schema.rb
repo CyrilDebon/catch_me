@@ -10,19 +10,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_25_153740) do
+ActiveRecord::Schema.define(version: 2019_02_26_105324) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "favorites", force: :cascade do |t|
+  create_table "directions", force: :cascade do |t|
     t.string "name"
-    t.string "user_stop_name"
+    t.bigint "line_id"
+    t.bigint "stop_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["line_id"], name: "index_directions_on_line_id"
+    t.index ["stop_id"], name: "index_directions_on_stop_id"
+  end
+
+  create_table "favorites", force: :cascade do |t|
     t.bigint "user_id"
     t.integer "tbm_stop_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "stop_id"
+    t.index ["stop_id"], name: "index_favorites_on_stop_id"
     t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
+
+  create_table "lines", force: :cascade do |t|
+    t.string "tbm_id"
+    t.string "name"
+    t.string "background"
+    t.string "text_color"
+    t.integer "kind"
+    t.string "code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "stops", force: :cascade do |t|
+    t.string "name"
+    t.string "tbm_id"
+    t.string "latitude"
+    t.string "longitude"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -39,5 +69,8 @@ ActiveRecord::Schema.define(version: 2019_02_25_153740) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "directions", "lines"
+  add_foreign_key "directions", "stops"
+  add_foreign_key "favorites", "stops"
   add_foreign_key "favorites", "users"
 end
