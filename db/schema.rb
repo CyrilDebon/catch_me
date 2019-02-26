@@ -47,8 +47,8 @@ ActiveRecord::Schema.define(version: 2019_02_26_134055) do
   create_table "stops", force: :cascade do |t|
     t.string "name"
     t.string "tbm_id"
-    t.string "latitude"
-    t.string "longitude"
+    t.float "latitude"
+    t.float "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "direction_id"
