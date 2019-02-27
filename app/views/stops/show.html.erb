@@ -4,11 +4,14 @@
 <p>Transport : <%= @stop.direction.line.name %></p>
 <p>Code Transport : <%= @stop.direction.line.code %></p>
 <ul>
-  <% @stop_tbm['destinations'].map do |_, value| %>
-    <% value.flatten.sort_by do |pass| %>
+  <% @stop_tbm['destinations']
+    .map { |_, value| value }
+    .flatten
+    .sort_by { |pass| pass['waittime'] }
+    .each do |passage| %>
       <li>
-        <%= pass['waittime'] %>
+        <%= passage["waittime"] %>
+        <%= passage['destination_name'] %>
       </li>
-    <% end %>
   <% end %>
 </ul>
