@@ -1,0 +1,25 @@
+<h1><%= @line.name %></h1>
+
+  <div class="accordion" id="accordionExample">
+  <% @line.directions.each do |direction| %>
+    <div class="card">
+      <div class="card-header" id="headingOne">
+        <h2 class="mb-0">
+          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#direction-<%= direction.id %>">
+            <%= direction.name %>
+          </button>
+        </h2>
+      </div>
+
+      <div id="direction-<%= direction.id %>" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <div class="card-body">
+          <ul>
+            <% direction.stops.each do |stop| %>
+             <li><%= stop.name %> - <%= link_to "click", stop_path(stop) %></li>
+           <% end %>
+         </ul>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

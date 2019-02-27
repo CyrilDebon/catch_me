@@ -9,7 +9,7 @@ Stop.destroy_all
 Direction.destroy_all
 Line.destroy_all
 
-lines_data = tbm_api("https://ws.infotbm.com/ws/1.0/network/get-lines-informations")
+lines_data = TbmApi.lines
 
 lines_data.each do |line_data|
   next if line_data['isHidden']
@@ -23,7 +23,7 @@ lines_data.each do |line_data|
   )
   puts "#{line.name}:"
 
-  line_full_data = tbm_api("https://ws.infotbm.com/ws/1.0/network/line-informations/#{line.tbm_id}")
+  line_full_data = TbmApi.line(line.tbm_id)
 
   line_full_data['routes'].each do |route_data|
     direction = Direction.create!(
