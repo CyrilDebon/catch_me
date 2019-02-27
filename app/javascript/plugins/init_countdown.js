@@ -14,12 +14,19 @@ const initCountdown = () => {
     return response.json();
   }).then(function(data) {
     var arrival = handlePassages(data['destinations'])
+    console.log(arrival)
+
+    var eventDestination = arrival[0]['destination_name'];
+    $('#main-passage .destination').html(eventDestination);
 
     var eventTime = moment(arrival[0]['arrival']).unix();
     var currentTime = moment().unix();
     var diffTime = (eventTime - currentTime) * 1000;
     var duration = moment.duration(diffTime, 'milliseconds');
     var interval = 1000;
+
+    duration = moment.duration(duration - interval, 'milliseconds');
+    $('#main-passage .countdown').html(duration.format("hh:mm:ss"));
 
     var countdown = setInterval(function(){
       duration = moment.duration(duration - interval, 'milliseconds');
@@ -38,8 +45,8 @@ function handlePassages(data) {
   return _.sortBy(_.flatten(_.map(data, function(value, key){
     return value;
   })), function(passage){
-    return passage.waittime;
-  });
+      return passage.waittime;
+});
 }
 
 export { initCountdown }
