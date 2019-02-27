@@ -3,9 +3,12 @@
 <p>Direction : <%= @stop.direction.name %></p>
 <p>Transport : <%= @stop.direction.line.name %></p>
 <p>Code Transport : <%= @stop.direction.line.code %></p>
-<% @stop_tbm.each do |stop| %>
-  <%= stop[1] %>
-<% end %>
-
-
-
+<ul>
+  <% @stop_tbm['destinations'].map do |_, value| %>
+    <% value.flatten.sort_by do |pass| %>
+      <li>
+        <%= pass['waittime'] %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
