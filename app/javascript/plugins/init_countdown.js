@@ -39,7 +39,7 @@ const initCountdown = () => {
     $('#next-passages').html('');
     var nextCountdowns = [];
     var nextPassageTemplate = _.template(`
-      <div class='passage' id='<%= id %>'>
+      <div class='passage d-flex justify-content-between' id='<%= id %>'>
         <div class='countdown'></div>
         <div class='destination'><%= destination %></div>
       </div>

@@ -1,15 +1,26 @@
-<h1><%= @stop.name %></h1>
-<p><%= @stop.tbm_id %></p>
-<p>Direction : <%= @stop.direction.name %></p>
-<p>Transport : <%= @stop.direction.line.name %></p>
-<p>Code Transport : <%= @stop.direction.line.code %></p>
 
-<div id="stop" data-stop-id="<%= @stop.tbm_stop_id %>" data-line-code="<%= @stop.code %>"></div>
+<div id="stop"  data-stop-id="<%= @stop.tbm_stop_id %>" data-line-code="<%= @stop.code %>"></div>
 
-<div id="main-passage">
-  <div class="countdown big-timer"></div>
-  <div class="destination"></div>
+<div id="main-passage" class="d-flex flex-column justify-content-between align-items-center">
+    <div><span class="next-time-passage"> Prochain passage </span>
+      <div class="countdown big-timer"></div>
+    </div>
+  <div class="destination">
+    <p class="next-passages mb-3">Direction : <%= @stop.direction.name %></p>
+  </div>
 </div>
 
 
-<div id="next-passages"></div>
+
+<div class="d-flex flex-column next-time-passage p-3" >
+
+  <span class="next-passage-footer pb-3"> PASSAGES SUIVANTS </span>
+  <div id="next-passages"></div>
+
+</div>
+
+
+
+
+
+
