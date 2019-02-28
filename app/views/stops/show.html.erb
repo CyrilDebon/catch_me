@@ -11,6 +11,15 @@
 </div>
 
 
+<div class="text-center">
+  <div id="fav">
+    <% if current_user.favorited?(@stop) %>
+      <%= link_to "Delete Fav", favorite_path(current_user.favorite(@stop)), method: :delete, class: 'btn btn-danger', remote: true %>
+    <% else %>
+      <%= link_to "Add Fav", stop_favorites_path(@stop.id), method: :post, class: 'btn btn-info', remote: true %>
+    <% end %>
+  </div>
+</div>
 
 <div class="d-flex flex-column next-time-passage p-3" >
 
