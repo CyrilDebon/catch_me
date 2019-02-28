@@ -1,10 +1,8 @@
-<h1>Toutes les lignes</h1>
-
 <ul class="list-group">
   <% @lines.each do |line| %>
    <li class="list-group-item">
       <div class="row">
-        <div class="circle-line-number text-center" style="background-color:#<%= line.background %>;"><%= line.code %></div>&nbsp;
+        <div class="circle-transport-type text-center" style="background-color:#<%= line.background %>;"><%= line.code %></div>&nbsp;
         <%= line.kind %> -
         <%= line.name %>
         <%= link_to "", line_path(line), class: "list-item-link" %>
