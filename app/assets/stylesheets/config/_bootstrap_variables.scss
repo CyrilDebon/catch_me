@@ -20,3 +20,11 @@ $brand-warning:   $orange;
 $border-radius-base:  2px;
 $border-radius-large: 2px;
 $border-radius-small: 2px;
+
+$card-border-radius: 0;
+$card-border-width: 1px;
+
+.card {
+  border-left: none !important;
+  border-right: none !important;
+}

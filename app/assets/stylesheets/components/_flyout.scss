@@ -1,0 +1,44 @@
+$flyout-max-width: 270px;
+
+.flyout {
+  overflow-x: auto;
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background: white;
+  width: 100%;
+  max-width: $flyout-max-width;
+  box-shadow: 0 0 0 5000px rgba(0, 0, 0, 0.3);
+  transition: all 300ms ease;
+  .flyout-shadow {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: $flyout-max-width;
+  }
+  .flyout-header {
+    border-bottom: 1px solid #DDD;
+    padding: 10px;
+  }
+  &.flyout-closed {
+    transform: translateX(-$flyout-max-width);
+    opacity: 0;
+    .flyout-shadow {
+      width: 0;
+    }
+  }
+  .flyout-links {
+    a {
+      display: flex;
+      align-items: center;
+      height: 50px;
+      color: black;
+      font-weight: bold;
+      padding-left: 22px;
+      border-bottom: 1px solid #DDD;
+    }
+  }
+}
