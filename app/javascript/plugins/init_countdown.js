@@ -4,6 +4,7 @@ import "moment-duration-format";
 
 const initCountdown = () => {
   var stopEl = document.getElementById('stop');
+  if (!stopEl) { return; }
   var stopId = stopEl.dataset.stopId;
   var lineCode = stopEl.dataset.lineCode;
   var interval = 1000;
@@ -21,7 +22,7 @@ const initCountdown = () => {
     var eventDestination = mainPassage['destination_name'];
     $('#main-passage .destination').html(eventDestination);
 
-    var eventTime = moment(mainPassage['arrival']).unix();
+    var eventTime = moment(mainPassage['departure']).unix();
     var currentTime = moment().unix();
     var mainDiffTime = (eventTime - currentTime) * 1000;
     var duration = moment.duration(mainDiffTime, 'milliseconds');
@@ -50,7 +51,7 @@ const initCountdown = () => {
       var nextPassage = nextPassageTemplate({ id: id, destination: destination });
       $('#next-passages').append(nextPassage);
 
-      var eventTime = moment(passage['arrival']).unix();
+      var eventTime = moment(passage['departure']).unix();
       var diffTime = (eventTime - currentTime) * 1000;
       var duration = moment.duration(diffTime, 'milliseconds');
 
