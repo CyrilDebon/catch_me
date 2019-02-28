@@ -5,5 +5,4 @@ Rails.application.routes.draw do
   resources :stops, only: [:show], shallow: true do
     resources :favorites, only: [:create, :destroy]
   end
-  resources :favorites, only: [:index]
 end

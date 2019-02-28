@@ -12,7 +12,9 @@
     <a href="#">Trouver un arrêt</a>
     <a href="#">Mes arrêts favoris</a>
       <ul id="favorites-stop">
-        <li></li>
+          <% current_user.favorites.each do |favorite| %>
+           <li><%= link_to favorite.stop.name, stop_path(favorite.stop.id) %></li>
+          <% end %>
       </ul>
     <a href="#">Se déconnecter</a>
     <a href="#">Mentions légales</a>

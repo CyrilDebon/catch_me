@@ -4,12 +4,26 @@
 }
 
 .next-passages {
-  font-style: normal;
-  font-weight: normal;
-  line-height: normal;
-  font-size: 15px;
-  color: #606060;
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+line-height: normal;
+font-size: 12px;
+text-align: center;
+text-transform: uppercase;
 
+color: #7D7D7D;
+
+}
+
+.next-passages-top {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: #C6C6C6;
 }
 
 .next-passage-footer {
