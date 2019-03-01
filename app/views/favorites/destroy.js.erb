@@ -1,0 +1,5 @@
+var favElm = document.getElementById('fav');
+
+favElm.innerHTML = "<%= j render 'favorites/actions', stop: @favorite.stop %>";
+
+document.getElementById('favorite-<%= @favorite.id %>').remove();
