@@ -11,21 +11,19 @@
     <div class="countdown big-timer d-flex align-items-center justify-content-center"></div>
 
     <div class="destination">
-      <p class="next-passages mb-3"> Direction : <%= @stop.direction.name %></p>
+      <p class="next-passages mb-3"><%= @stop.direction.name %></p>
     </div>
   </div>
 </div>
-<% if current_user.present? %>
-<div class="text-center">
-  <div id="fav">
-    <% if current_user.favorited?(@stop) %>
-      <%= link_to "Delete Fav", favorite_path(current_user.favorite(@stop)), method: :delete, class: 'btn btn-danger', remote: true %>
-    <% else %>
-      <%= link_to "Add Fav", stop_favorites_path(@stop.id), method: :post, class: 'btn btn-info', remote: true %>
-    <% end %>
+
+<% if user_signed_in? %>
+  <div class="text-center">
+    <div id="fav">
+      <%= render "favorites/actions", stop: @stop %>
+    </div>
   </div>
-</div>
 <% end %>
+
 <div class="d-flex flex-column next-time-passage p-3" >
   <span class="next-passage-footer pb-3"> PASSAGES SUIVANTS </span>
   <div id="next-passages"></div>
