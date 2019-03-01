@@ -1,3 +1,9 @@
-<li id="favorite-<%= favorite.id %>">
-  <%= link_to favorite.stop.name, stop_path(favorite.stop) %>
-</li>
+<div id="favorite-<%= favorite.id %>" class="stop-and-direction">
+  <div class="circle-transport-type"> B</div>
+  <div>
+    <h3 class="stop"><%= favorite.stop.name %></h3>
+    <h3 class="direction"><%= favorite.stop.direction.name %></h3>
+  </div>
+
+  <%= link_to "", stop_path(favorite.stop), class: "slat-link" %>
+</div>

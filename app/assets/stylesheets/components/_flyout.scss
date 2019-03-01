@@ -1,4 +1,4 @@
-$flyout-max-width: 270px;
+$flyout-max-width: 300px;
 
 .flyout {
   overflow-x: auto;
@@ -22,6 +22,8 @@ $flyout-max-width: 270px;
   .flyout-header {
     border-bottom: 1px solid #DDD;
     padding: 10px;
+    background-color: black;
+    height: 100px;
   }
   &.flyout-closed {
     transform: translateX(-$flyout-max-width);
@@ -35,10 +37,16 @@ $flyout-max-width: 270px;
       display: flex;
       align-items: center;
       height: 50px;
-      color: black;
-      font-weight: bold;
       padding-left: 22px;
-      border-bottom: 1px solid #DDD;
+      color: inherit;
     }
+    & > a {
+      border-top: 1px solid #DDD;
+    }
+  }
+  .label {
+    border-top: 1px solid #DDD;
+    padding-left: 22px;
+    padding-top: 10px;
   }
 }

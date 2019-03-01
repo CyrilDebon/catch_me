@@ -4,19 +4,19 @@
 }
 
 .next-passages {
-font-family: Roboto;
-font-style: normal;
-font-weight: normal;
-line-height: normal;
-font-size: 12px;
-text-align: center;
-text-transform: uppercase;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+  font-size: 12px;
+  text-align: center;
+  text-transform: uppercase;
 
-color: #7D7D7D;
+  color: #7D7D7D;
 
 }
 
-.next-passages-top {
+.next-passages-top, .label {
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
@@ -24,6 +24,7 @@ color: #7D7D7D;
   font-size: 12px;
   letter-spacing: 0.08em;
   color: #C6C6C6;
+  text-transform: uppercase;
 }
 
 .next-passage-footer {
