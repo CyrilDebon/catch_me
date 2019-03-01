@@ -1,4 +1,12 @@
+
+<% content_for(:title) do %>
+  <div class="circle-transport-type<%= 'long-code' if @stop.direction.line.long_code? %>" style="background-color:#<%= @stop.direction.line.background %>;">
+    <%= @stop.direction.line.code %></div>&nbsp;
+    <%= @stop.direction.line.name %>- <%= @stop.name %>
+
+<% end %>
 <div id="stop" class="flex-grow-1 d-flex" data-stop-id="<%= @stop.tbm_stop_id %>" data-line-code="<%= @stop.code %>">
+
 
   <div id="main-passage" class="d-flex flex-column align-items-center justify-content-center flex-grow-1">
 
@@ -13,6 +21,7 @@
     </div>
   </div>
 </div>
+
 
 <% if user_signed_in? %>
   <div class="text-center">
