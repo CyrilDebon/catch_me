@@ -1,0 +1,44 @@
+.stops {
+  padding: 0;
+  list-style:none;
+  a {
+    position:relative;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    text-decoration: none;
+    color: inherit;
+
+    &:before {
+      margin-right: 15px;
+      content: "";
+      width: 10px;
+      height: 10px;
+      display: block;
+      border-radius: 50%;
+      background: red;
+    }
+    &:after {
+      content: "";
+      width: 2px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      background: red;
+      left: 14px;
+    }
+  }
+  li:first-child {
+
+    a:after {
+       top: 50%;
+
+    }
+  }
+  li:last-child {
+    a:after {
+      bottom: 50%;
+    }
+  }
+
+}
