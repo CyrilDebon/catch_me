@@ -13,9 +13,16 @@
 
       <div id="direction-<%= direction.id %>" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
         <div class="card-body">
-          <ul>
-            <% direction.stops.each do |stop| %>
-             <li><%= stop.name %> - <%= link_to "click", stop_path(stop) %></li>
+          <style>
+            .stops a:after, .stops a:before {
+              background: #<%= @line.background %>;
+            }
+          </style>
+          <ul class="stops">
+            <% direction.stops.reverse.each do |stop| %>
+             <li>
+              <%= link_to stop.name, stop_path(stop) %>
+             </li>
            <% end %>
          </ul>
         </div>

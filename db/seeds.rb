@@ -44,3 +44,14 @@ lines_data.each do |line_data|
     end
   end
 end
+
+# Sort lines
+
+Line.all.sort_by { |line| line.code.to_i }.reverse.each { |line| line.move_to_top }
+Line.all.select { |line| line.code.to_i == 0 }.each { |line| line.move_to_bottom}
+Line.where("code LIKE 'BAT%'").first.move_to_top
+Line.find_by_code('Stade').move_to_top
+Line.find_by_code('Arena').move_to_top
+Line.find_by_code('C').move_to_top
+Line.find_by_code('B').move_to_top
+Line.find_by_code('A').move_to_top

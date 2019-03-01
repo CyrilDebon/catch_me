@@ -10,6 +10,10 @@
   justify-content: center;
   align-content: center;
   align-items: center;
-  font-family: Roboto;
   flex-shrink: 0;
+  &.long-code {
+    width: auto;
+    font-size: 12px;
+    padding: 0 8px;
+  }
 }
