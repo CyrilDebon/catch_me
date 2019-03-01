@@ -19,10 +19,14 @@
           <%= render "favorites/favorite", favorite: favorite %>
         <% end %>
       </ul>
-      <a href="#">Se déconnecter</a>
+
+      <%= link_to "Se déconnecter",  destroy_user_session_path %>
     <% else %>
+
+      <%= link_to "Se connecter / créer un compte", new_user_registration_path %>
       Se connecter / créer un compte
     <% end %>
+
     <a href="#">Mentions légales</a>
   </div>
 
