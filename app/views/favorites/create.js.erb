@@ -1,0 +1,6 @@
+var favElm = document.getElementById('fav');
+var favoritesElm = document.getElementById('favorites-stop');
+
+favElm.innerHTML = "<%= j render 'favorites/actions', stop: @stop %>";
+
+favoritesElm.insertAdjacentHTML('beforeend', "<%= j render "favorites/favorite", favorite: @favorite %>");

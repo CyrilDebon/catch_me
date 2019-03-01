@@ -10,16 +10,23 @@
 
   <div class="flyout-links">
 
-    <% if current_user.present? %>
-    <a href="#">Trouver un arrêt</a>
-    <a href="#">Mes arrêts favoris</a>
+    <% if user_signed_in? %>
+      <%= link_to "Trouver un arrêt", lines_path %>
+
+      Mes arrêts favoris
       <ul id="favorites-stop">
-          <% current_user.favorites.each do |favorite| %>
-           <li><%= link_to favorite.stop.name, stop_path(favorite.stop.id) %></li>
-          <% end %>
+        <% current_user.favorites.each do |favorite| %>
+          <%= render "favorites/favorite", favorite: favorite %>
+        <% end %>
       </ul>
-      <% end %>
-    <a href="#">Se déconnecter</a>
+
+      <%= link_to "Se déconnecter",  destroy_user_session_path %>
+    <% else %>
+
+      <%= link_to "Se connecter / créer un compte", new_user_registration_path %>
+      Se connecter / créer un compte
+    <% end %>
+
     <a href="#">Mentions légales</a>
   </div>
 

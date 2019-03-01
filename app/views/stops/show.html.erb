@@ -1,35 +1,32 @@
+
 <% content_for(:title) do %>
   <div class="circle-transport-type<%= 'long-code' if @stop.direction.line.long_code? %>" style="background-color:#<%= @stop.direction.line.background %>;">
     <%= @stop.direction.line.code %></div>&nbsp;
     <%= @stop.direction.line.name %>- <%= @stop.name %>
 
 <% end %>
+<div id="stop" class="flex-grow-1 d-flex" data-stop-id="<%= @stop.tbm_stop_id %>" data-line-code="<%= @stop.code %>">
 
 
-<div id="stop"  data-stop-id="<%= @stop.tbm_stop_id %>" data-line-code="<%= @stop.code %>">
-
-  <div id="main-passage" class="d-flex flex-column align-items-center justify-content-center pt-10">
+  <div id="main-passage" class="d-flex flex-column align-items-center justify-content-center flex-grow-1">
 
     <div class="next-passages-top">
       PROCHAIN PASSAGE
     </div>
 
-    <div class="countdown big-timer d-flex align-items-center justify-content-center"></div>
+    <div class="countdown big-timer"></div>
 
     <div class="destination">
-      <p class="next-passages mb-3"> Direction : <%= @stop.direction.name %></p>
+      <p class="next-passages mb-3"><%= @stop.direction.name %></p>
     </div>
   </div>
 </div>
 
-<% if current_user.present? %>
+
+<% if user_signed_in? %>
   <div class="text-center">
     <div id="fav">
-      <% if current_user.favorited?(@stop) %>
-        <%= link_to "Delete Fav", favorite_path(current_user.favorite(@stop)), method: :delete, class: 'btn btn-danger', remote: true %>
-      <% else %>
-        <%= link_to "Add Fav", stop_favorites_path(@stop.id), method: :post, class: 'btn btn-info', remote: true %>
-      <% end %>
+      <%= render "favorites/actions", stop: @stop %>
     </div>
   </div>
 <% end %>
