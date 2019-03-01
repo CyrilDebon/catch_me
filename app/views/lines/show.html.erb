@@ -1,8 +1,5 @@
 <% content_for(:title, "Trouver un arrêt") %>
 
-
-<h1><%= @line.name %></h1>
-
 <div class="accordion" id="accordionExample">
   <% @line.directions.each do |direction| %>
     <div class="card">
