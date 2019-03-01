@@ -15,7 +15,7 @@
     </div>
   </div>
 </div>
-
+<% if current_user.present? %>
 <div class="text-center">
   <div id="fav">
     <% if current_user.favorited?(@stop) %>
@@ -25,6 +25,7 @@
     <% end %>
   </div>
 </div>
+<% end %>
 <div class="d-flex flex-column next-time-passage p-3" >
   <span class="next-passage-footer pb-3"> PASSAGES SUIVANTS </span>
   <div id="next-passages"></div>

@@ -9,6 +9,8 @@
   </header>
 
   <div class="flyout-links">
+
+    <% if current_user.present? %>
     <a href="#">Trouver un arrêt</a>
     <a href="#">Mes arrêts favoris</a>
       <ul id="favorites-stop">
@@ -16,6 +18,7 @@
            <li><%= link_to favorite.stop.name, stop_path(favorite.stop.id) %></li>
           <% end %>
       </ul>
+      <% end %>
     <a href="#">Se déconnecter</a>
     <a href="#">Mentions légales</a>
   </div>
