@@ -1,12 +1,9 @@
 <ul class="list-group">
   <% @lines.each do |line| %>
-   <li class="list-group-item">
-      <div class="row">
-        <div class="circle-transport-type text-center" style="background-color:#<%= line.background %>;"><%= line.code %></div>&nbsp;
-        <%= line.kind %> -
-        <%= line.name %>
-        <%= link_to "", line_path(line), class: "list-item-link" %>
-      </div>
+   <li class="list-group-item d-flex align-items-baseline">
+      <div class="circle-transport-type <%= 'long-code' if line.long_code? %>" style="background-color:#<%= line.background %>;"><%= line.code %></div>&nbsp;
+      <%= line.name %>
+      <%= link_to "", line_path(line), class: "list-item-link" %>
     </li>
   <% end %>
 </ul>
