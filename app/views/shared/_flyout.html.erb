@@ -4,7 +4,16 @@
       <a class="flyout-close icon-link" href="#">
           <%= image_tag("burger-menu.svg")  %>
       </a>
-      <img class="avatar" src="http://image.noelshack.com/fichiers/2014/44/1414370916-texmn.jpg">
+    </div>
+
+    <div class="flyout-header-content">
+      <% if current_or_guest_user.guest? %>
+        <span>Bienvenue sur Catch-Me</span>
+      <% else %>
+        <%= current_user.email %>
+      <% end %>
+    </div>
+
   </header>
 
   <div class="flyout-links">

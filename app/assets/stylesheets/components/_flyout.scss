@@ -24,6 +24,12 @@ $flyout-max-width: 300px;
     padding: 10px;
     background-color: black;
     height: 100px;
+    color: #C6C6C6;
+    font-size: 0.8em;
+    .flyout-header-content {
+      padding-top: 30px;
+      padding-right: 30px;
+    }
   }
   &.flyout-closed {
     transform: translateX(-$flyout-max-width);
