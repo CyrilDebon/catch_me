@@ -6,4 +6,6 @@ favElm.innerHTML = "<%= j render 'favorites/actions', stop: @stop %>";
 var favStar = document.getElementById('fav-star');
 favStar.classList.add('fav-activated');
 
-favoritesElm.insertAdjacentHTML('beforeend', "<%= j render "favorites/favorite", favorite: @favorite %>");
+<% if @favorite.valid? %>
+  favoritesElm.insertAdjacentHTML('beforeend', "<%= j render "favorites/favorite", favorite: @favorite %>");
+<% end %>

@@ -28,16 +28,6 @@
   </div>
 </div>
 
-
-
-<% if current_or_guest_user %>
-  <div class="text-center">
-    <div id="fav">
-      <%= render "favorites/actions", stop: @stop %>
-    </div>
-  </div>
-<% end %>
-
 <div class="d-flex flex-column next-time-passage p-3" >
   <span class="next-passage-footer pb-3"> PASSAGES SUIVANTS </span>
   <div id="next-passages"></div>
