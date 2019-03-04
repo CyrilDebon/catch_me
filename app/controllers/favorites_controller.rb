@@ -2,7 +2,7 @@ class FavoritesController < ApplicationController
 
   def create
     @stop = Stop.find(params[:stop_id])
-    @favorite = @stop.favorites.new(user: current_user)
+    @favorite = @stop.favorites.new(user: current_or_guest_user)
     @favorite.save
 
     respond_to do |format|

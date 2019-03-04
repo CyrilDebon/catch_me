@@ -17,6 +17,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'acts_as_list'
+gem 'devise-guests'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
