@@ -9,23 +9,23 @@
 
   <div class="flyout-links">
 
-    <% if user_signed_in? %>
-      <%= link_to "Trouver un arrêt", lines_path %>
+    <%= link_to "Trouver un arrêt", lines_path %>
 
+    <%# if current_or_guest_user.has_favorites? %>
       <h3 class="label">
         Mes arrêts favoris
       </h3>
       <div id="favorites-stop">
-        <% current_user.favorites.each do |favorite| %>
+        <% current_or_guest_user.favorites.each do |favorite| %>
           <%= render "favorites/favorite", favorite: favorite %>
         <% end %>
       </div>
+    <%# end %>
 
-      <%= link_to "Se déconnecter",  destroy_user_session_path %>
-    <% else %>
-
+    <% if current_or_guest_user.guest? %>
       <%= link_to "Se connecter / créer un compte", new_user_registration_path %>
-      Se connecter / créer un compte
+    <% else %>
+      <%= link_to "Se déconnecter",  destroy_user_session_path, method: :delete %>
     <% end %>
 
     <a href="#">Mentions légales</a>

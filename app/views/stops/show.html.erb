@@ -2,7 +2,7 @@
 <% content_for(:title) do %>
   <div class="circle-transport-type <%= 'long-code' if @stop.direction.line.long_code? %>" style="background-color:#<%= @stop.direction.line.background %>;">
     <%= @stop.direction.line.code %>
-  </div>
+  </div>&nbsp;
   <%= @stop.direction.line.name %>- <%= @stop.name %>
 
 <% end %>
@@ -24,7 +24,7 @@
 </div>
 
 
-<% if user_signed_in? %>
+<% if current_or_guest_user %>
   <div class="text-center">
     <div id="fav">
       <%= render "favorites/actions", stop: @stop %>
