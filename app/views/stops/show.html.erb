@@ -1,11 +1,16 @@
-
 <% content_for(:title) do %>
   <div class="circle-transport-type <%= 'long-code' if @stop.direction.line.long_code? %>" style="background-color:#<%= @stop.direction.line.background %>;">
     <%= @stop.direction.line.code %>
   </div>&nbsp;
   <%= @stop.direction.line.name %>- <%= @stop.name %>
-
 <% end %>
+
+<% content_for(:action) do %>
+  <div id="fav">
+    <%= render "favorites/actions", stop: @stop %>
+  </div>
+<% end %>
+
 <div id="stop" class="flex-grow-1 d-flex" data-stop-id="<%= @stop.tbm_stop_id %>" data-line-code="<%= @stop.code %>">
 
 
@@ -22,6 +27,7 @@
     </div>
   </div>
 </div>
+
 
 
 <% if current_or_guest_user %>
