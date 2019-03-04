@@ -1,34 +1,32 @@
-$Fav-size: 100px;
-$Fav-lineThickness: 4px;
-
-.Fav {
+.fav {
   position: relative;
-  width: $Fav-size;
-  height: $Fav-size;
+  width: 60px;
+  height: 60px;
   cursor: pointer;
-}
 
-.Fav-checkbox {
-  position: absolute;
-  z-index: -1;
-  opacity: 0;
+  &.fav-active {
+    .fav-star {
+      fill: #ffac33;
+    }
+  }
 
-  &:checked {
-    ~ .Fav-bloom {
+  &.fav-activated {
+    .fav-bloom {
       animation: background 0.5s ease both;
     }
 
-    ~ .Fav-sparkle .Fav-sparkle-line::before {
+    .fav-sparkle .fav-sparkle-line::before {
       animation: line 1s ease both;
     }
 
-    ~ .Fav-star {
+    .fav-star {
       animation: star 1s ease both;
     }
   }
 }
 
-.Fav-label {
+
+.fav-label {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -37,16 +35,7 @@ $Fav-lineThickness: 4px;
   z-index: 2;
 }
 
-.Fav-label-text {
-  position: absolute;
-  left: -10000px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-}
-
-.Fav-bloom {
+.fav-bloom {
   position: absolute;
   z-index: 1;
   top: 0;
@@ -57,10 +46,9 @@ $Fav-lineThickness: 4px;
   border-width: 0;
   border-style: solid;
   border-color: #ffa624;
-  will-change: border-width;
 }
 
-.Fav-sparkle-line {
+.fav-sparkle-line {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -69,12 +57,11 @@ $Fav-lineThickness: 4px;
     position: absolute;
     z-index: 1;
     top: 30%;
-    width: $Fav-lineThickness;
+    width: 4px;
     height: 0;
     left: calc(50% - 2px);
-    border-radius: $Fav-lineThickness/2;
+    border-radius: 2px;
     background: #fa733e;
-    will-change: top, height;
     content: "";
   }
 
@@ -99,7 +86,7 @@ $Fav-lineThickness: 4px;
   }
 }
 
-.Fav-star {
+.fav-star {
   z-index: 1;
   padding: 18px;
   width: 100%;
@@ -155,7 +142,7 @@ $Fav-lineThickness: 4px;
 
 @keyframes background {
   0% {
-    border-width: $Fav-size/2;
+    border-width: 50px;
     transform: scale(0);
   }
 
@@ -168,13 +155,4 @@ $Fav-lineThickness: 4px;
   }
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
 
-
-.Caption {
-  color: #ffac33;
-}

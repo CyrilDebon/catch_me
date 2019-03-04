@@ -1,5 +1,9 @@
 <% if current_user.favorited?(stop) %>
-  <%= link_to "Delete Fav", favorite_path(current_user.favorite(stop)), method: :delete, class: 'btn btn-danger', remote: true %>
+  <%= link_to favorite_path(current_user.favorite(stop)), method: :delete, remote: true do %>
+    <%= render "favorites/star", active: true %>
+  <% end %>
 <% else %>
-  <%= link_to "Add Fav", stop_favorites_path(stop), method: :post, class: 'btn btn-info', remote: true %>
+  <%= link_to stop_favorites_path(stop), method: :post, remote: true do %>
+    <%= render "favorites/star", active: false %>
+  <% end %>
 <% end %>
