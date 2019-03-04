@@ -1,4 +1,14 @@
-<% content_for(:title, "Trouver un arrêt") %>
+<% content_for(:title) do %>
+  <div class="stop-and-direction">
+    <div class="circle-transport-type <%= 'long-code' if @line.long_code? %>" style="background-color:#<%= @line.background %>;">
+      <%= @line.code %>
+    </div>
+     <div>
+      <h3 class="direction-line"><%= @line.name %></h3>
+      <h3 class="direction"><span>Choisir la direction</span></h3>
+    </div>
+  </div>
+<% end %>
 
 <div class="accordion" id="accordionExample">
   <% @line.directions.each do |direction| %>
