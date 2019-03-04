@@ -3,4 +3,5 @@ class Direction < ApplicationRecord
   has_many :stops
 
   delegate :code, to: :line
+  delegate :background, to: :line
 end

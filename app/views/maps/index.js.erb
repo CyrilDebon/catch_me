@@ -1,0 +1,6 @@
+// render map with markers
+var mapWrapper = document.getElementById('map-wrapper')
+mapWrapper.innerHTML = "<%= j render 'maps/map', markers: @markers %>";
+
+// launch mapbox
+initMapbox();

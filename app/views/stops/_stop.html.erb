@@ -1,0 +1,10 @@
+
+<div class="stop-and-direction">
+  <div class="circle-transport-type <%= 'long-code' if stop.direction.line.long_code? %>" style="background-color:#<%= stop.direction.line.background %>;"><%= stop.direction.line.code %></div>
+  <div>
+    <h3 class="stop"><%= stop.name %></h3>
+    <h3 class="direction"><%= stop.direction.name %></h3>
+  </div>
+
+  <%= link_to "", stop_path(stop), class: "slat-link" %>
+</div>
