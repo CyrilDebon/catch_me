@@ -3,7 +3,11 @@ class Stop < ApplicationRecord
   has_one :line, through: :direction
   has_many :favorites
 
+  geocoded_by :location
+  after_validation :geocode
+
   delegate :code, to: :direction
+  delegate :background, to: :direction
 
   include PgSearch
   pg_search_scope :search_by_keyword, against: [
