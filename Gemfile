@@ -18,6 +18,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'acts_as_list'
 gem 'devise-guests'
+gem 'pg_search'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

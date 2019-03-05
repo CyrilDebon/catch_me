@@ -1,5 +1,11 @@
 <% content_for(:title, "Choisir une ligne") %>
 
+<%= simple_form_for :search, url: searches_path, method: :get, remote: true do |f| %>
+  <%= f.input_field 'term', onkeyup: "Rails.fire(this.form, 'submit')", class: 'search-bar', placeholder: 'chercher un arrêt' %>
+<% end %>
+
+<div id="stop-search" class="search-result"></div>
+
 <ul class="list-group">
   <% @lines.each do |line| %>
    <li class="list-group-item d-flex align-items-baseline">
@@ -9,3 +15,4 @@
     </li>
   <% end %>
 </ul>
+
