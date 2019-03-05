@@ -1,3 +1,5 @@
+<% content_for(:body_class, "with-search") %>
+
 <% content_for(:title) do %>
   <div class="stop-and-direction">
     <div class="circle-transport-type <%= 'long-code' if @line.long_code? %>" style="background-color:#<%= @line.background %>;">
@@ -9,6 +11,8 @@
     </div>
   </div>
 <% end %>
+
+<%= render "searches/search" %>
 
 <div class="accordion" id="accordionExample">
   <% @line.directions.each do |direction| %>

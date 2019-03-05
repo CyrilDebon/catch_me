@@ -1,10 +1,7 @@
 <% content_for(:title, "Choisir une ligne") %>
+<% content_for(:body_class, "with-search") %>
 
-<%= simple_form_for :search, url: searches_path, method: :get, remote: true do |f| %>
-  <%= f.input_field 'term', onkeyup: "Rails.fire(this.form, 'submit')", class: 'search-bar', placeholder: 'chercher un arrêt' %>
-<% end %>
-
-<div id="stop-search" class="search-result"></div>
+<%= render "searches/search" %>
 
 <ul class="list-group">
   <% @lines.each do |line| %>
@@ -17,9 +14,6 @@
 </ul>
 
 
-<!-- <a href="#" id="show-map">MAP</a> -->
-
-
-<div id="map-wrapper"></div>
+<div id="map-wrapper" class="map-wrapper d-none"></div>
 
 <%= render 'shared/button-map' %>

@@ -1,0 +1,5 @@
+<%= simple_form_for :search, url: searches_path, method: :get, remote: true do |f| %>
+  <%= f.input_field 'term', onkeyup: "searchStop(this)", class: 'search-bar', placeholder: 'chercher un arrêt' %>
+<% end %>
+
+<div id="stop-search" class="search-result d-none"></div>
