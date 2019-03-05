@@ -2,6 +2,7 @@
   border-radius: 4px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   padding: 15px 15px 2px;
+  z-index: 1001;
 
 
   .stop-and-direction {
@@ -37,4 +38,11 @@
   height: 25px;
   width: 25px;
   text-align: center;
+  border-radius: 50%;
+  display: flex;
+  color: white;
+  flex-shrink: 0;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }
