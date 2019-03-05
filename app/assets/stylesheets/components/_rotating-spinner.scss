@@ -1,0 +1,12 @@
+.rotating-spinner {
+  animation: rotating-spinner infinite linear 1000ms;
+}
+
+@keyframes rotating-spinner {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
