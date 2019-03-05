@@ -37,4 +37,12 @@
   height: 25px;
   width: 25px;
   text-align: center;
+  border-radius: 50%;
+  display: flex;
+  color: white;
+  z-index: 1;
+  flex-shrink: 0;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }
