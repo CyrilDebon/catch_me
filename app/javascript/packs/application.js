@@ -4,6 +4,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 
 import Rails from 'rails-ujs';
 Rails.start();
+window.Rails = Rails;
 
 import { initCountdown } from '../plugins/init_countdown'
 import { flyout } from '../plugins/flyout'
