@@ -1,4 +1,7 @@
 <% content_for(:title, "Choisir une ligne") %>
+<% content_for(:body_class, "with-search") %>
+
+<%= render "searches/search" %>
 
 <ul class="list-group">
   <% @lines.each do |line| %>
@@ -11,7 +14,6 @@
 </ul>
 
 
-<a href="#" id="show-map">MAP</a>
+<div id="map-wrapper" class="map-wrapper d-none"></div>
 
-
-<div id="map-wrapper"></div>
+<%= render 'shared/button-map' %>

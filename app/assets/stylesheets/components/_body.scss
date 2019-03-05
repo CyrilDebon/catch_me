@@ -1,0 +1,6 @@
+body {
+  padding-top: $navbar-height;
+  &.with-search {
+    padding-top: $navbar-height + $search-height;
+  }
+}

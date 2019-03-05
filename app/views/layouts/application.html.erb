@@ -7,10 +7,10 @@
     <title>Catch Me Bx</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
-    <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= stylesheet_pack_tag 'application', media: 'all' %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
   </head>
-  <body>
+  <body class="<%= content_for(:body_class) %>">
     <%= render 'shared/flyout' %>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
