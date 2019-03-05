@@ -1,15 +1,18 @@
 import mapboxgl from 'mapbox-gl';
 
-const initMapbox = () => {
+const initMapbox = (userPosition) => {
   const mapElement = document.getElementById('map');
 
   const buildMap = () => {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     return new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v10'
+      style: 'mapbox://styles/mapbox/streets-v10',
+      zoom: 16,
+      center: userPosition
     });
   };
+
 
   const addMarkersToMap = (map, markers) => {
     markers.forEach((marker) => {
@@ -33,9 +36,12 @@ const initMapbox = () => {
     const markers = JSON.parse(mapElement.dataset.markers);
     addMarkersToMap(map, markers);
 
-    // center to user position
-    // set zoom level
+    var el = document.createElement('div');
+    el.className = 'marker-user';
 
+    new mapboxgl.Marker(el)
+      .setLngLat(userPosition)
+      .addTo(map);
   }
 };
 

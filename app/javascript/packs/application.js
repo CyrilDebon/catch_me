@@ -10,8 +10,10 @@ import { initCountdown } from '../plugins/init_countdown'
 import { flyout } from '../plugins/flyout'
 import { initMap } from '../plugins/init_map';
 import { initMapbox } from '../plugins/init_mapbox';
+import { searchStop } from '../plugins/search_stop';
 
 flyout();
 initCountdown();
 initMap();
 window.initMapbox = initMapbox;
+window.searchStop = searchStop;

@@ -1,12 +1,14 @@
+$navbar-height: 60px;
+
 .navbar {
   border-bottom: 1px solid #E0E0E0;
   flex-wrap: nowrap;
   padding: 6px;
-  height: 60px;
-  // position: fixed;
-  //   top: 0;
-  //   left: 0;
-  //   width: 100%;
-  //   background: white;
-  //   z-index: 1000;
+  height: $navbar-height;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  z-index: 1000;
 }
