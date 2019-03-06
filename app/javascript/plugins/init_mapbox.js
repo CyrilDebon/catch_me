@@ -1,5 +1,12 @@
 import mapboxgl from 'mapbox-gl';
 
+window.addEventListener("load",function() {
+    setTimeout(function(){
+        // This hides the address bar:
+        window.scrollTo(0, 1);
+    }, 0);
+});
+
 const initMapbox = (userPosition) => {
   const mapElement = document.getElementById('map');
 
@@ -17,9 +24,11 @@ const initMapbox = (userPosition) => {
   const addMarkersToMap = (map, markers) => {
     markers.forEach((marker) => {
       var el = document.createElement('div');
+
       el.innerHTML = marker.code;
       el.className = 'marker-stop';
       el.style.backgroundColor = "#" + marker.background;
+
 
       new mapboxgl.Marker(el)
         .setLngLat([ marker.lng, marker.lat ])
