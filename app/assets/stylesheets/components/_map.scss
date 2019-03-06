@@ -47,12 +47,12 @@
   align-items: center;
 }
 
-$marker-user-size: 10px;
+$marker-user-size: 14px;
 
 .marker-user {
   width: $marker-user-size;
   height: $marker-user-size;
-  background: blue;
+  background: #00a2cc;
   border-radius: 50%;
 
   &:after {
