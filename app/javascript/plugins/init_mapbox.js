@@ -42,6 +42,7 @@ const initMapbox = (userPosition) => {
     new mapboxgl.Marker(el)
       .setLngLat(userPosition)
       .addTo(map);
+
   }
 };
 

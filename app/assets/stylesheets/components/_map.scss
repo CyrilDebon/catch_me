@@ -46,11 +46,38 @@
   align-content: center;
   align-items: center;
 }
+
+$marker-user-size: 10px;
+
 .marker-user {
-  border-radius: 50%;
-  height: 20px;
-  width: 20px;
+  width: $marker-user-size;
+  height: $marker-user-size;
   background: blue;
+  border-radius: 50%;
+
+  &:after {
+    content: "";
+    width: $marker-user-size;
+    height: $marker-user-size;
+    border-radius: 50%;
+    position: absolute;
+    box-shadow: 0 0 0 3px rgba(0, 0, 255, 0.2);
+    animation: markerUser infinite 1s ease;
+  }
+}
+
+@keyframes markerUser {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 3px rgba(0, 0, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 0 2px rgba(0, 0, 255, 0.2);
+  }
+  100% {
+    transform: scale(1.4);
+    box-shadow: 0 0 0 1px rgba(0, 0, 255, 0);
+  }
 }
 
 .map-wrapper {
