@@ -3,9 +3,6 @@ import Rails from 'rails-ujs';
 function initMap() {
   const showMapBtn = document.getElementById('show-map');
 
-  console.log(showMapBtn);
-
-
   if (showMapBtn) {
     showMapBtn.addEventListener('click', function(e) {
       e.preventDefault();

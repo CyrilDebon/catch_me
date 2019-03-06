@@ -1,8 +1,11 @@
 <% content_for(:title) do %>
-  <div class="circle-transport-type <%= 'long-code' if @stop.direction.line.long_code? %>" style="background-color:#<%= @stop.direction.line.background %>;">
+  <div class="circle-transport-type mr-1 ml-3 <%= 'long-code' if @stop.direction.line.long_code? %>" style="background-color:#<%= @stop.direction.line.background %>;">
     <%= @stop.direction.line.code %>
-  </div>&nbsp;
-  <%= @stop.direction.line.name %>- <%= @stop.name %>
+  </div>
+  <span class="stop-name">
+    <strong><%= @stop.direction.line.name %></strong> <br>
+    <small><%= @stop.name %></small>
+  </span>
 <% end %>
 
 <% content_for(:action) do %>
@@ -32,6 +35,11 @@
   <span class="next-passage-footer pb-3"> PASSAGES SUIVANTS </span>
   <div id="next-passages"></div>
 </div>
+
+
+<script>
+  setTimeout(function() { window.scrollTo(0, 1) }, 100);
+</script>
 
 
 
