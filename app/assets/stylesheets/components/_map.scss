@@ -47,6 +47,13 @@
   align-items: center;
 }
 
+.marker-stop:after {
+    content:'';
+    position:absolute;
+    top:-20px; bottom:-20px;
+    left:-20px; right:-20px;
+}
+
 $marker-user-size: 14px;
 
 .marker-user {
