@@ -1,7 +1,7 @@
 <div class="sign-up-form-container">
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= f.error_notification %>
-    <div class="form-inputs">
+    <div class="form-inputs form-inputs-sign-up">
       <h2>Sign up</h2>
       <%= f.input :email,
                   required: true,

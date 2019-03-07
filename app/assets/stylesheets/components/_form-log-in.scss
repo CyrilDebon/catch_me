@@ -1,12 +1,4 @@
-.button-sign-up {
-  background-color: black;
-  border-color: black;
-  .btn{
-    color: white;
-  }
-}
-
-.sign-up-form-container {
+.log-in-form-container {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -16,7 +8,23 @@
   padding: 20px;
 }
 
-.form-inputs-sign-up {
+.button-log-in {
+  background-color: black;
+  border-color: black;
+  .btn{
+    color: white;
+  }
+}
+
+
+.form-actions-log-in {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-inputs-log-in {
   h2 {
     display: flex;
     align-items: center;
@@ -24,15 +32,3 @@
     justify-content: center;
   }
 }
-
-.form-actions-sign-up {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-}
-
-
-
-
-
