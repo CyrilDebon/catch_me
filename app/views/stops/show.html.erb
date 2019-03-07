@@ -14,11 +14,14 @@
   </div>
 <% end %>
 
+
 <div id="stop" class="flex-grow-1 d-flex" data-stop-id="<%= @stop.tbm_stop_id %>" data-line-code="<%= @stop.code %>">
 
-
-  <div id="main-passage" class="d-flex flex-column align-items-center justify-content-center flex-grow-1">
-
+  <div id="main-passage" class="main-passage d-flex flex-column align-items-center justify-content-center flex-grow-1">
+    <div class="animation-bar">
+      <%= inline_svg('stop.svg') %>
+      <%= inline_svg("#{@stop.kind}.svg") %>
+    </div>
     <div class="next-passages-top">
       PROCHAIN PASSAGE
     </div>
@@ -26,7 +29,7 @@
     <div class="countdown big-timer"></div>
 
     <div class="destination">
-      <p class="next-passages mb-3"><%= @stop.name %></p>
+      <p class="direction mb-3"><%= @stop.name %></p>
     </div>
   </div>
 </div>

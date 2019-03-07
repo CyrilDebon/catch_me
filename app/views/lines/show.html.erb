@@ -13,37 +13,37 @@
 <% end %>
 
 <%= render "searches/search" %>
-<div class="accordion" id="accordionExample">
-  <% @line.directions.each do |direction| %>
-    <div class="card">
-      <div class="card-header" id="headingOne">
-        <h2 class="mb-0 d-flex align-items-center">
-          <svg class="flex-shrink-0 mr-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><title>ic_keyboard_arrow_down_24px</title>
-            <g class="nc-icon-wrapper" stroke="none" fill="#111111">
-              <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
-            </g>
-          </svg>
-          <span class="direction">  <%= direction.name %> </span>
-          <a class="list-item-link direction-text" data-toggle="collapse" data-target="#direction-<%= direction.id %>"></a>
-        </h2>
-      </div>
 
-      <div id="direction-<%= direction.id %>" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-        <div class="card-body">
-          <style>
-            .stops a:after, .stops a:before {
-              background: #<%= @line.background %>;
-            }
-          </style>
-          <ul class="stops">
-            <% direction.stops.reverse.each do |stop| %>
-             <li>
+<div id="destinations">
+
+  <% @line.directions.each do |direction| %>
+    <div class="accordion-header">
+      <a class="accordion-link" data-toggle="collapse" href="#direction-<%= direction.id %>">
+        <%= inline_svg('direction.svg') %>
+        <span class="direction">
+          <%= direction.name %>
+        </span>
+      </a>
+    </div>
+
+    <div class="collapse p-3" id="direction-<%= direction.id %>" data-parent="#destinations">
+      <style>
+          .stops a:after, .stops a:before {
+            background: #<%= @line.background %>;
+          }
+        </style>
+        <ul class="stops">
+          <% direction.stops.reverse.each do |stop| %>
+            <li>
               <%= link_to stop.name, stop_path(stop) %>
-             </li>
-           <% end %>
-         </ul>
-        </div>
-      </div>
+            </li>
+          <% end %>
+        </ul>
     </div>
   <% end %>
+
 </div>
+
+
+
+

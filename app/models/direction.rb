@@ -2,6 +2,5 @@ class Direction < ApplicationRecord
   belongs_to :line
   has_many :stops
 
-  delegate :code, to: :line
-  delegate :background, to: :line
+  delegate :code, :background, :kind, to: :line
 end
