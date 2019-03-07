@@ -4,7 +4,7 @@
   </div>
   <span class="stop-name">
     <strong><%= @stop.direction.line.name %></strong> <br>
-    <small><%= @stop.name %></small>
+    <small id="stop-destination"><%= @stop.direction.name %></small>
   </span>
 <% end %>
 
@@ -26,7 +26,7 @@
     <div class="countdown big-timer"></div>
 
     <div class="destination">
-      <p class="next-passages mb-3"><%= @stop.direction.name %></p>
+      <p class="next-passages mb-3"><%= @stop.name %></p>
     </div>
   </div>
 </div>

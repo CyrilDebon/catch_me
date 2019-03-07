@@ -23,7 +23,7 @@ const initCountdown = () => {
 
     // HANDLE MAIN PASSAGE
     var eventDestination = mainPassage['destination_name'];
-    $('#main-passage .destination').html(eventDestination);
+    $('#stop-destination').html(eventDestination);
 
     var eventTime = moment(mainPassage['departure']).unix();
 
@@ -75,7 +75,6 @@ const initCountdown = () => {
 
       nextCountdowns.push(countdown);
     });
-
 
     var nextFetch = (mainDiffTime < 5 * interval) ? mainDiffTime : 5 * interval;
 

@@ -13,7 +13,6 @@ class Stop < ApplicationRecord
   pg_search_scope :search_by_keyword, against: [
     :name
   ], associated_against: {
-    direction: [:name],
     line: [:name]
   },
   using: {
