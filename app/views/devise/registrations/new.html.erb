@@ -1,9 +1,8 @@
-<h2>Sign up</h2>
-
-<div class="container">
+<div class="sign-up-form-container">
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= f.error_notification %>
     <div class="form-inputs">
+      <h2>Sign up</h2>
       <%= f.input :email,
                   required: true,
                   autofocus: true,
@@ -17,13 +16,12 @@
                   input_html: { autocomplete: "new-password" } %>
     </div>
 
-    <div class="form-actions">
-      <button type="button" class="btn btn-primary">
+    <div class="form-actions form-actions-sign-up">
+      <button type="button" class="btn btn-primary button-sign-up">
         <%= f.button :submit, "Sign up" %>
       </button>
     </div>
   <% end %>
+  <%= render "devise/shared/links" %>
 </div>
 
-
-<%= render "devise/shared/links" %>
