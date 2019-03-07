@@ -24,11 +24,12 @@
       <h3 class="label">
         Mes arrêts favoris
       </h3>
-      <div id="favorites-stop">
+      <div id="favorites-stop" data-favorites-count="<%= current_or_guest_user.favorites.count %>">
         <% current_or_guest_user.favorites.each do |favorite| %>
           <%= render "favorites/favorite", favorite: favorite %>
         <% end %>
       </div>
+
     <%# end %>
 
     <% if current_or_guest_user.guest? %>

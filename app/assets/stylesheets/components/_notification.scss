@@ -1,0 +1,47 @@
+.notification {
+  display: flex;
+  position: fixed;
+  bottom: 50px;
+  left: 15px;
+  right: 15px;
+  background: #2D2D2D;
+  border-radius: 4px;
+  z-index: 1004;
+  align-items: stretch;
+  transition: all ease 300ms;
+  transform: scale(0.9);
+  opacity: 0;
+  .notification-content {
+    flex-grow: 1;
+    .stop-and-direction {
+      padding: 15px 15px;
+    }
+    .stop {
+      color: white;
+    }
+    .circle-transport-type {
+      box-shadow: 0 0 0px 1px #7d7d7d
+    }
+  }
+  .notification-action {
+    display: flex;
+    align-items: stretch;
+    a {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      color: white;
+      text-decoration: none;
+      border-left: 1px solid #515151;
+      font-size: 12px;
+    }
+  }
+  &.notification-show {
+    opacity: 1;
+    transform: scale(1);
+  }
+  &.notification-hidden {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}

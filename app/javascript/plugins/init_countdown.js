@@ -2,6 +2,8 @@ import _ from "underscore";
 import moment from "moment";
 import "moment-duration-format";
 
+var oldPassageTime;
+
 const initCountdown = () => {
   var stopEl = document.getElementById('stop');
   if (!stopEl) { return; }
@@ -9,6 +11,7 @@ const initCountdown = () => {
   var lineCode = stopEl.dataset.lineCode;
   var interval = 1000;
   var url = "https://ws.infotbm.com/ws/1.0/get-realtime-pass/" + stopId + "/" + lineCode;
+  var stopEl = document.getElementById("stop");
 
   fetch(url).then(function(response){
     return response.json();
@@ -20,20 +23,28 @@ const initCountdown = () => {
 
     // HANDLE MAIN PASSAGE
     var eventDestination = mainPassage['destination_name'];
-    $('#main-passage .destination').html(eventDestination);
+    $('#stop-destination').html(eventDestination);
 
     var eventTime = moment(mainPassage['departure']).unix();
+
     var currentTime = moment().unix();
     var mainDiffTime = (eventTime - currentTime) * 1000;
     var duration = moment.duration(mainDiffTime, 'milliseconds');
+
+    if (duration > 40000) {
+      stopEl.classList.remove('stop-danger');
+    }
 
     $('#main-passage .countdown').html(duration.format("hh:mm:ss"));
 
     var mainCountdown = setInterval(function(){
       duration = moment.duration(duration - interval, 'milliseconds');
+      if (duration <= 40000) {
+        stopEl.classList.add('stop-danger');
+      }
+
       $('#main-passage .countdown').html(duration.format("hh:mm:ss"));
     }, interval);
-
 
     // HANDLE NEXT PASSAGES
     $('#next-passages').html('');
@@ -43,7 +54,7 @@ const initCountdown = () => {
         <div class='countdown'></div>
         <div class='destination'><%= destination %></div>
       </div>
-    `)
+    `);
 
     nextPassages.forEach(function(passage, index){
       var destination = passage['destination_name'];
@@ -65,6 +76,8 @@ const initCountdown = () => {
       nextCountdowns.push(countdown);
     });
 
+    var nextFetch = (mainDiffTime < 5 * interval) ? mainDiffTime : 5 * interval;
+
     setTimeout(function(){
       clearInterval(mainCountdown);
       nextCountdowns.forEach(function(countdown){
@@ -72,10 +85,14 @@ const initCountdown = () => {
       });
 
       initCountdown();
-    }, mainDiffTime);
+    }, nextFetch);
 
   });
 }
+
+
+
+
 
 function handlePassages(data) {
   return _.sortBy(_.flatten(_.map(data, function(value, key){
@@ -87,4 +104,6 @@ function handlePassages(data) {
 
 
 export { initCountdown };
+
+
 

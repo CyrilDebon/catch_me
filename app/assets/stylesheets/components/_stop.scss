@@ -5,4 +5,15 @@
   line-height: normal;
   font-size: 14px;
   color: #000000;
+  transition: all ease 300ms;
+}
+
+.stop-danger {
+  color: #E42E2E;
+  .next-passages-top {
+    color: #E42E2E;
+  }
+}
+.stop-name {
+  line-height: 1.1;
 }
