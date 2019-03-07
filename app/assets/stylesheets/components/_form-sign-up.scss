@@ -1,0 +1,38 @@
+.button-sign-up {
+  background-color: black;
+  border-color: black;
+  .btn{
+    color: white;
+  }
+}
+
+.sign-up-form-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  min-height: 100%;
+  padding: 20px;
+}
+
+.form-inputs-sign-up {
+  h2 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.form-actions-sign-up {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+
+
+
