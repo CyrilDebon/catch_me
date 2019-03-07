@@ -6,8 +6,7 @@ class Stop < ApplicationRecord
   geocoded_by :location
   after_validation :geocode
 
-  delegate :code, to: :direction
-  delegate :background, to: :direction
+  delegate :code, :background, :kind, to: :direction
 
   include PgSearch
   pg_search_scope :search_by_keyword, against: [

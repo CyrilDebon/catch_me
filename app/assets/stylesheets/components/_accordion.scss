@@ -1,0 +1,16 @@
+.accordion-link {
+  display: block;
+  padding: 15px 10px;
+  color: inherit;
+  text-decoration: inherit;
+  &:hover {
+    text-decoration: inherit;
+  }
+}
+
+.accordion-header {
+  border-bottom: 1px solid #E0E0E0;
+  &:first-child {
+    border-top: 1px solid #E0E0E0;
+  }
+}

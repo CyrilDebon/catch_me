@@ -2,7 +2,7 @@ import _ from "underscore";
 import moment from "moment";
 import "moment-duration-format";
 
-var oldPassageTime;
+var oldTripId = undefined;
 
 const initCountdown = () => {
   var stopEl = document.getElementById('stop');
@@ -12,6 +12,7 @@ const initCountdown = () => {
   var interval = 1000;
   var url = "https://ws.infotbm.com/ws/1.0/get-realtime-pass/" + stopId + "/" + lineCode;
   var stopEl = document.getElementById("stop");
+  var animEl = document.querySelector('.animation-icon');
 
   fetch(url).then(function(response){
     return response.json();
@@ -20,6 +21,14 @@ const initCountdown = () => {
 
     var mainPassage = passages[0];
     var nextPassages = passages.slice(1);
+
+    var newTripId = mainPassage['trip_id'];
+
+    if ((oldTripId != undefined) && (oldTripId != newTripId)) {
+      animEl.classList.add('animation-icon-departing');
+    }
+
+    oldTripId = newTripId;
 
     // HANDLE MAIN PASSAGE
     var eventDestination = mainPassage['destination_name'];
@@ -41,6 +50,9 @@ const initCountdown = () => {
       duration = moment.duration(duration - interval, 'milliseconds');
       if (duration <= 40000) {
         stopEl.classList.add('stop-danger');
+      }
+      if (duration < 30000) {
+        animEl.classList.add('animation-icon-arriving');
       }
 
       $('#main-passage .countdown').html(duration.format("hh:mm:ss"));
@@ -76,7 +88,10 @@ const initCountdown = () => {
       nextCountdowns.push(countdown);
     });
 
-    var nextFetch = (mainDiffTime < 5 * interval) ? mainDiffTime : 5 * interval;
+    var refetchTime = 30 * interval;
+
+    // var nextFetch = (mainDiffTime < refetchTime) ? mainDiffTime : refetchTime;
+    var nextFetch = mainDiffTime;
 
     setTimeout(function(){
       clearInterval(mainCountdown);
