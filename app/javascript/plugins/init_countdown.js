@@ -26,6 +26,7 @@ const initCountdown = () => {
 
     if ((oldTripId != undefined) && (oldTripId != newTripId)) {
       animEl.classList.add('animation-icon-departing');
+      animEl.classList.remove('animation-icon-arriving');
     }
 
     oldTripId = newTripId;
@@ -52,6 +53,7 @@ const initCountdown = () => {
         stopEl.classList.add('stop-danger');
       }
       if (duration < 30000) {
+        animEl.classList.remove('animation-icon-departing');
         animEl.classList.add('animation-icon-arriving');
       }
 
