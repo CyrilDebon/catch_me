@@ -92,8 +92,8 @@ const initCountdown = () => {
 
     var refetchTime = 30 * interval;
 
-    // var nextFetch = (mainDiffTime < refetchTime) ? mainDiffTime : refetchTime;
-    var nextFetch = mainDiffTime;
+    var nextFetch = (mainDiffTime < refetchTime) ? mainDiffTime : refetchTime;
+    // var nextFetch = mainDiffTime;
 
     setTimeout(function(){
       clearInterval(mainCountdown);
