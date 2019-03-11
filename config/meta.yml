@@ -1,0 +1,5 @@
+meta_product_name: "Catch me"
+meta_title: "Catch Me Bordeaux - Rate plus ton tram poto"
+meta_description: "On vous donne le timming du prochain tram/bus/bateau en deux cliques"
+meta_image: "icon-catch-me.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
