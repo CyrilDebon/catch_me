@@ -90,7 +90,7 @@ const initCountdown = () => {
       nextCountdowns.push(countdown);
     });
 
-    var refetchTime = 30 * interval;
+    var refetchTime = 5 * interval;
 
     var nextFetch = (mainDiffTime < refetchTime) ? mainDiffTime : refetchTime;
     // var nextFetch = mainDiffTime;
