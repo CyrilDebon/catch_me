@@ -1,0 +1,5 @@
+meta_product_name: "Catch Me"
+meta_title: "Catch Me Bx - Ne rate plus jamais ton tram"
+meta_description: "Trouve les informations de ton prochain tram en seulement 2 clics"
+meta_image: "logo.png" # should exist in `app/assets/images/`
+# twitter_account: "@product_twitter_account"   # required for Twitter Cards
