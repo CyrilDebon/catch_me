@@ -2,7 +2,7 @@
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= f.error_notification %>
     <div class="form-inputs form-inputs-sign-up">
-      <h2>Sign up</h2>
+      <h2>Créer un compte</h2>
       <%= f.input :email,
                   required: true,
                   autofocus: true,
@@ -18,7 +18,7 @@
 
     <div class="form-actions form-actions-sign-up">
       <button type="button" class="btn btn-primary button-sign-up">
-        <%= f.button :submit, "Sign up" %>
+        <%= f.button :submit, "Créer un compte" %>
       </button>
     </div>
   <% end %>
