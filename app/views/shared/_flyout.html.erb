@@ -26,6 +26,7 @@
       </h3>
       <div id="favorites-stop" data-favorites-count="<%= current_or_guest_user.favorites.count %>">
         <% current_or_guest_user.favorites.each do |favorite| %>
+
           <%= render "favorites/favorite", favorite: favorite %>
         <% end %>
       </div>
@@ -37,6 +38,7 @@
     <% else %>
       <%= link_to "Se déconnecter",  destroy_user_session_path, method: :delete %>
     <% end %>
+    <p class="favorites-text">Sans compte, les arrêts sont sauvegardés dans vos cookies. Pour sauvegarder definitivement un arrêt, créez vous un compte.</p>
 
 
   </div>

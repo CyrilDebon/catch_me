@@ -28,7 +28,7 @@ $flyout-max-width: 300px;
     font-size: 0.8em;
     .flyout-header-content {
       padding-top: 30px;
-      padding-right: 30px;
+      padding-left: 12px;
     }
   }
   &.flyout-closed {
@@ -38,6 +38,15 @@ $flyout-max-width: 300px;
       width: 0;
     }
   }
+
+  .favorites-text {
+    font-size: 0.6em;
+    padding-left: 21px;
+    padding-right: 5px;
+    color: #C6C6C6;
+  }
+
+
   .flyout-links {
     a {
       display: flex;
