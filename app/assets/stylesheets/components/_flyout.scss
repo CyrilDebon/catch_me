@@ -31,6 +31,14 @@ $flyout-max-width: 300px;
       padding-left: 12px;
     }
   }
+  .flyout-logo {
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  right: 19px;
+  top: 12px;
+  }
   &.flyout-closed {
     transform: translateX(-$flyout-max-width);
     opacity: 0;
@@ -41,9 +49,10 @@ $flyout-max-width: 300px;
 
   .favorites-text {
     font-size: 0.6em;
-    padding-left: 21px;
-    padding-right: 5px;
     color: #C6C6C6;
+    position: absolute;
+    bottom: 10px;
+    padding: 11px;
   }
 
 
@@ -65,3 +74,4 @@ $flyout-max-width: 300px;
     padding-top: 10px;
   }
 }
+

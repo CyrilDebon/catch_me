@@ -6,11 +6,17 @@
       </a>
     </div>
 
+    <div>
+      <%= image_tag 'icon-catch-me.png', class: 'flyout-logo' %>
+    </div>
+
+
     <div class="flyout-header-content">
       <% if current_or_guest_user.guest? %>
         <span>Bienvenue sur Catch-Me</span>
       <% else %>
-        <%= current_user.email %>
+        <span class="float-left">Content de te revoir !</span>
+        <span class="float-right"><%= current_user.email %></span>
       <% end %>
     </div>
 
@@ -34,7 +40,8 @@
     <%# end %>
 
     <% if current_or_guest_user.guest? %>
-      <%= link_to "Se connecter / créer un compte", new_user_registration_path %>
+      <%= link_to "Se connecter", new_user_session_path %>
+      <%= link_to "Créer un compte", new_user_registration_path %>
       <p class="favorites-text">Sans compte, les arrêts sont sauvegardés dans vos cookies. Pour sauvegarder definitivement un arrêt, créez vous un compte.</p>
     <% else %>
       <%= link_to "Se déconnecter",  destroy_user_session_path, method: :delete %>

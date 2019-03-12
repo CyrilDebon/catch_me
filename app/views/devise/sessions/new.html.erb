@@ -1,7 +1,7 @@
 <div class="log-in-form-container">
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="form-inputs form-inputs-log-in">
-      <h2>Log in</h2>
+      <h2>Se connecter</h2>
       <%= f.input :email,
                   required: false,
                   autofocus: true,
@@ -14,9 +14,11 @@
 
     <div class="form-actions form-actions-log-in">
       <button type="button" class="btn btn-primary button-log-in">
-        <%= f.button :submit, "Log in" %>
+        <%= f.button :submit, "Se connecter" %>
       </button>
     </div>
   <% end %>
-  <%= render "devise/shared/links" %>
+  <div class="forget-password">
+    <%= render "devise/shared/links" %>
+  </div>
 </div>

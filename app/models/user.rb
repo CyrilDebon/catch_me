@@ -5,6 +5,8 @@ class User < ApplicationRecord
   has_many :favorites
   has_many :stops, through: :favorites
 
+  LANGUAGES = {'English' => 'en','French' => 'fr'}
+
   def test_method
     byebug
   end
