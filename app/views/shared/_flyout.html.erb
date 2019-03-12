@@ -35,10 +35,11 @@
 
     <% if current_or_guest_user.guest? %>
       <%= link_to "Se connecter / créer un compte", new_user_registration_path %>
+      <p class="favorites-text">Sans compte, les arrêts sont sauvegardés dans vos cookies. Pour sauvegarder definitivement un arrêt, créez vous un compte.</p>
     <% else %>
       <%= link_to "Se déconnecter",  destroy_user_session_path, method: :delete %>
     <% end %>
-    <p class="favorites-text">Sans compte, les arrêts sont sauvegardés dans vos cookies. Pour sauvegarder definitivement un arrêt, créez vous un compte.</p>
+
 
 
   </div>
