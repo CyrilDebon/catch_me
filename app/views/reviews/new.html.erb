@@ -1,0 +1,12 @@
+<div class="panel panel-default">
+    <div class="panel-body">
+      <%= simple_form_for @review do |f| %>
+        <%= f.input :body, label: 'Votre nom/pseudo' %>
+        <%= f.input :amelioration, label: 'Comment pouvons-nous améliorer Catch-Me?' %>
+        <%= f.input :like, label: "Qu'appréciez vous dans notre application?" %>
+        <%= f.input :frenquencies, label: 'A quelle fréquence utilisez-vous Catch-Me?',collection: 1..10 %>
+        <%= f.input :recommendation, label: 'Recommanderiez-vous Catch-Me à un amis?',collection: 1..10 %>
+        <%= f.button :submit, class: 'btn btn-primary' %>
+      <% end %>
+  </div>
+</div>
