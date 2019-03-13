@@ -31,7 +31,17 @@
     <div class="destination">
       <p class="direction mb-3"><%= @stop.name %></p>
     </div>
+    <div>
+      <% if @stop.kind == "bus"%>
+          <p class="information-traffic"> En raison des fluctuations du traffic automobile, les bus peuvent avoir 30 secondes d’avance par rapport au chrono.
+          Si vous êtes à la bourre, on vous conseille de presser le pas à partir de la dernière minute. </p>
+      <% end %>
+    </div>
   </div>
+</div>
+
+<div>
+
 </div>
 
 <div class="d-flex flex-column next-time-passage p-4" >
