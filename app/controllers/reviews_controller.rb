@@ -10,6 +10,7 @@ class ReviewsController < ApplicationController
     if !@review.save
       redirect_to root_path, notice: "Quelque chose s'est mal passé, Merci de rééssayer"
     else
+      ReviewMailer.welcome(@review).deliver_now
       redirect_to root_path, notice: "Message reçu, merci de l'intérêt porté à Catch Me !"
     end
   end
