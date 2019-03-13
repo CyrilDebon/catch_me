@@ -1,0 +1,27 @@
+<% @reviews.each do |review| %>
+
+     <%= "Utilisateur N°#{review.id}" %>
+
+     <% if review.body.present? %>
+      <p> <%= "Pseudo = #{review.body}" %> </p>
+     <% end %>
+
+     <% if review.like.present? %>
+      <p><%= "Ce qu'il aime = #{review.like}"%></p>
+     <% end %>
+
+     <% if review.recommendation.present? %>
+      <p><%= "Recommandation = #{review.recommendation}/10" %> </p>
+     <% end %>
+
+     <% if review.frenquencies.present? %>
+      <p> <%= "Fréquence d'utilisation = #{review.frenquencies}/10" %> </p>
+     <% end %>
+
+     <% if review.amelioration.present? %>
+      <p><%= "Amélioration = #{review.amelioration}" %></p>
+     <% end %>
+
+<p> ------------------------------------------------------------------------------------------</p>
+
+<% end %>

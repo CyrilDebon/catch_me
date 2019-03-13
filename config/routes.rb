@@ -16,4 +16,7 @@ Rails.application.routes.draw do
 
   resources :maps, only: [:index]
 
+
+  resources :reviews, only: [:new, :create, :index]
+
 end
