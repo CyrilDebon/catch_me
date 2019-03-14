@@ -14,7 +14,6 @@
   </div>
 <% end %>
 
-
 <div id="stop" class="flex-grow-1 d-flex" data-stop-id="<%= @stop.tbm_stop_id %>" data-line-code="<%= @stop.code %>">
 
   <div id="main-passage" class="main-passage d-flex flex-column align-items-center justify-content-center flex-grow-1">
@@ -31,16 +30,19 @@
     <div class="destination">
       <p class="direction mb-3"><%= @stop.name %></p>
     </div>
+
+    <div>
+      <% if @stop.stop_in_night? %>
+        <p>Reprise du traffic à 5h</p>
+      <% end %>
+    </div>
+
     <div>
       <% if @stop.kind == "bus"%>
           <p class="information-trafic"> En raison des fluctuations du trafic, les bus peuvent avoir 30 secondes d’avance par rapport au compteur. Pour être sûr de ne pas manquer le bus, on vous conseille de presser le pas à partir de la dernière minute. </p>
       <% end %>
     </div>
   </div>
-</div>
-
-<div>
-
 </div>
 
 <div class="d-flex flex-column next-time-passage p-4" >

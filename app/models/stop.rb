@@ -23,4 +23,10 @@ class Stop < ApplicationRecord
   def tbm_stop_id
     tbm_id.split(':')[-1]
   end
+
+  def stop_in_night?
+    d1 = "01:30"
+    d2 = "04:59"
+    Time.now.strftime("%H:%M").between?( d1, d2)
+  end
 end
