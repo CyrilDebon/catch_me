@@ -1,9 +1,5 @@
-.button-sign-up {
-  background-color: black;
-  border-color: black;
-  .btn{
-    color: white;
-  }
+.btn {
+  color: white;
 }
 
 .sign-up-form-container {
@@ -13,16 +9,7 @@
   justify-content: center;
   width: 100%;
   min-height: 100%;
-  padding: 20px;
-}
-
-.form-inputs-sign-up {
-  h2 {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-  }
+  padding-top: 50px;
 }
 
 .form-actions-sign-up {
@@ -30,6 +17,11 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  padding-top: 30px;
+}
+
+.font-size-element {
+  font-size: 0.9em;
 }
 
 
