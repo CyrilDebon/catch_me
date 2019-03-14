@@ -1,12 +1,17 @@
-<div class="panel panel-default">
-    <div class="panel-body">
+<% content_for(:title, "Laissez-nous votre avis") %>
+
+<div class="log-in-form-container">
       <%= simple_form_for @review do |f| %>
-        <%= f.input :body, label: 'Votre nom/pseudo' %>
-        <%= f.input :amelioration, label: 'Comment pouvons-nous améliorer Catch-Me?' %>
-        <%= f.input :like, label: "Qu'appréciez vous dans notre application?" %>
-        <%= f.input :frenquencies, label: 'A quelle fréquence utilisez-vous Catch-Me?',collection: 1..10 %>
-        <%= f.input :recommendation, label: 'Recommanderiez-vous Catch-Me à un amis?',collection: 1..10 %>
-        <%= f.button :submit, class: 'btn btn-primary' %>
+        <div class="font-size-element">
+          <%= f.input :body, label: 'Votre nom ou pseudo' %>
+          <%= f.input :amelioration, label: 'Comment pouvons-nous améliorer Catch-Me?' %>
+          <%= f.input :like, label: "Qu'appréciez vous dans notre application?" %>
+          <%= f.input :frenquencies, label: 'À quelle fréquence utilisez-vous Catch-Me?',collection: 1..10 %>
+          <%= f.input :recommendation, label: 'Recommanderiez-vous Catch-Me à un amis?',collection: 1..10 %>
+        </div>
+
+        <div class="form-actions form-actions-sign-up">
+          <%= f.button :submit, value: 'Laisser mon avis', class: 'btn btn-dark' %>
+        </div>
       <% end %>
-  </div>
 </div>

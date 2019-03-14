@@ -22,7 +22,7 @@ $flyout-max-width: 300px;
   .flyout-header {
     border-bottom: 1px solid #DDD;
     padding: 10px;
-    background-color: black;
+    background-color: #212529;
     height: 100px;
     color: #C6C6C6;
     font-size: 0.8em;
@@ -31,13 +31,23 @@ $flyout-max-width: 300px;
       padding-left: 12px;
     }
   }
+  .flyout-bottom {
+    position: absolute;
+    bottom: 0px;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    font-size: 0.6em;
+    background-color: #f9f9f9;
+    color: #a2a2a2;
+  }
   .flyout-logo {
-  border-radius: 50%;
-  height: 30px;
-  width: 30px;
-  position: absolute;
-  right: 19px;
-  top: 12px;
+    position: absolute;
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;
+    right: 12px;
   }
   &.flyout-closed {
     transform: translateX(-$flyout-max-width);
