@@ -6,11 +6,6 @@
       </a>
     </div>
 
-    <div>
-      <%= image_tag 'icon-catch-me.png', class: 'flyout-logo' %>
-    </div>
-
-
     <div class="flyout-header-content">
       <% if current_or_guest_user.guest? %>
         <span>Bienvenue sur Catch-Me</span>
@@ -51,6 +46,11 @@
       <%= link_to "Aidez-nous à améliorer Catch Me", new_review_path %>
     </div>
 
+  </div>
+
+  <div class="flyout-bottom">
+    Made with love by Catch-Me Team
+    <%= image_tag 'icon-catch-me.png', class: 'flyout-logo' %>
   </div>
 
 
