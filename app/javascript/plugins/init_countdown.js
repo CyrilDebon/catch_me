@@ -18,7 +18,6 @@ const initCountdown = () => {
     return response.json();
   }).then(function(data) {
     var passages = handlePassages(data['destinations'])
-
     var mainPassage = passages[0];
     var nextPassages = passages.slice(1);
 
@@ -39,11 +38,23 @@ const initCountdown = () => {
 
     var currentTime = moment().unix();
     var mainDiffTime = (eventTime - currentTime) * 1000;
+
+    if (document.getElementById('bus-countdown')) {
+      var mainDiffTime = (mainDiffTime - 22000);
+    } else {
+      var mainDiffTime = (mainDiffTime - 10000);
+    };
+
+    if (mainDiffTime <= 0) {
+      mainDiffTime = 0;
+    };
+
     var duration = moment.duration(mainDiffTime, 'milliseconds');
 
     if (duration > 40000) {
       stopEl.classList.remove('stop-danger');
-    }
+    };
+
 
     $('#main-passage .countdown').html(duration.format("hh:mm:ss"));
 
