@@ -25,7 +25,11 @@
       PROCHAIN PASSAGE
     </div>
 
-    <div class="countdown big-timer"></div>
+      <% if @stop.kind == "bus" %>
+        <div id="bus-countdown" class="countdown big-timer""></div>
+      <% else %>
+        <div class="countdown big-timer"></div>
+      <% end %>
 
     <div class="destination">
       <p class="direction mb-3"><%= @stop.name %></p>
@@ -33,7 +37,7 @@
 
     <div>
       <% if @stop.stop_in_night? %>
-        <p>Reprise du traffic à 5h</p>
+        <p>Reprise du trafic à 5h</p>
       <% end %>
     </div>
 
