@@ -21,7 +21,9 @@
     <meta property="og:description" content="<%= meta_description %>" />
     <meta property="og:site_name" content="<%= meta_title %>" />
     <link rel="apple-touch-icon" href="/assets/icon-catch-me.png" />
+    <%= render 'layouts/google_analytics' %>
   </head>
+
   <body class="<%= content_for(:body_class) %>">
     <%= render 'shared/flyout' %>
     <%= render 'shared/navbar' %>
