@@ -18,7 +18,6 @@ const initCountdown = () => {
     return response.json();
   }).then(function(data) {
     var passages = handlePassages(data['destinations'])
-    console.log(data);
     var mainPassage = passages[0];
     var nextPassages = passages.slice(1);
 
