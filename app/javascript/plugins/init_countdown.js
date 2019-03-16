@@ -118,10 +118,6 @@ const initCountdown = () => {
   });
 }
 
-
-
-
-
 function handlePassages(data) {
   return _.sortBy(_.flatten(_.map(data, function(value, key){
     return value;

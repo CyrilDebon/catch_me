@@ -3,10 +3,10 @@
 <div class="log-in-form-container">
       <%= simple_form_for @review do |f| %>
         <div class="font-size-element">
-          <%= f.input :body, label: 'Votre nom ou pseudo' %>
+          <%= f.input :body, label: 'Votre adresse mail (facultatif)' %>
           <%= f.input :amelioration, as: :text, input_html: {rows: 2}, label: 'Comment pouvons-nous améliorer Catch-Me?' %>
           <%= f.input :like, as: :text, input_html: {rows: 2}, label: "Qu'appréciez vous dans notre application?" %>
-          <%= f.input :frenquencies, label: 'À quelle fréquence utilisez-vous Catch-Me?',collection: 1..10 %>
+          <%= f.input :frenquencies, label: 'Combien de fois utilisez-vous Catch-Me par semaine?',collection: 1..10 %>
           <%= f.input :recommendation, label: 'Recommanderiez-vous Catch-Me à un amis?',collection: 1..10 %>
         </div>
 
