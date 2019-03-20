@@ -17,11 +17,14 @@
 <div id="stop" class="flex-grow-1 d-flex" data-stop-id="<%= @stop.tbm_stop_id %>" data-line-code="<%= @stop.code %>">
 
   <div id="main-passage" class="main-passage d-flex flex-column align-items-center justify-content-center flex-grow-1">
+
+
+
     <div class="animation-bar">
       <%= inline_svg('stop.svg') %>
       <%= inline_svg("#{@stop.kind}.svg") %>
     </div>
-    <div class="next-passages-top">
+    <div id="check-countdown" class="next-passages-top">
       PROCHAIN PASSAGE
     </div>
 
