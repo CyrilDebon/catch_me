@@ -22,9 +22,9 @@ const initCountdown = () => {
     var nextPassages = passages.slice(1);
 
     if (mainPassage === undefined) {
-      var testId = document.getElementById('test');
-      testId.insertAdjacentHTML('afterend',
-        "<p>Aucun information ne peut vous être transmises... MERCI TBM</p>")
+      var noCountdown = document.getElementById('check-countdown');
+      noCountdown.insertAdjacentHTML('afterend',
+        "<p>Aucune information ne peut vous être transmises... MERCI TBM</p>")
     }
 
     var newTripId = mainPassage['trip_id'];
