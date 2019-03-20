@@ -21,6 +21,12 @@ const initCountdown = () => {
     var mainPassage = passages[0];
     var nextPassages = passages.slice(1);
 
+    if (mainPassage === undefined) {
+      var testId = document.getElementById('test');
+      testId.insertAdjacentHTML('afterend',
+        "<p>Aucun information ne peut vous être transmises... MERCI TBM</p>")
+    }
+
     var newTripId = mainPassage['trip_id'];
 
     if ((oldTripId != undefined) && (oldTripId != newTripId)) {
