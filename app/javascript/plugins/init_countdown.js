@@ -24,7 +24,7 @@ const initCountdown = () => {
     if (mainPassage === undefined) {
       var noCountdown = document.getElementById('check-countdown');
       noCountdown.insertAdjacentHTML('afterend',
-        "<p>Aucune information ne peut vous être transmises... MERCI TBM</p>")
+        "<p class='no-countdown'>Aucune information actuellement, cela fait sans doute suite à des problèmes sur le réseau</p>")
     }
 
     var newTripId = mainPassage['trip_id'];
